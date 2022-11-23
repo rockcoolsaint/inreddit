@@ -3,6 +3,7 @@ import path from "path";
 import { __prod__ } from "./constants";
 import { Post } from "./entities/Post";
 import dotenv from "dotenv";
+import { User } from "./entities/User";
 
 dotenv.config();
 
@@ -11,7 +12,7 @@ export default {
     path: path.join(__dirname, './migrations'), // path to the folder with migrations
     pattern: /^[\w-]+\d+\.[tj]s$/,
   },
-  entities: [Post],
+  entities: [Post, User],
   dbName: 'inreddit',
   type: 'postgresql',
   user: process.env.DB_USER,
